@@ -1,6 +1,6 @@
 {
   "name": "appCompra",
-  "app_id": "",
+  "app_id": "app.appcompra.lucas.dias",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
