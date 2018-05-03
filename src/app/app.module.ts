@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CursosProvider } from '../providers/cursos/cursos';
+import { UsuariosProvider } from '../providers/usuarios/usuarios';
 ;
 
 @NgModule({
@@ -41,7 +42,8 @@ import { CursosProvider } from '../providers/cursos/cursos';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CursosProvider
+    CursosProvider,
+    UsuariosProvider
   ]
 })
 export class AppModule {}
