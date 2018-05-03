@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 
+import { IUsuario } from '../../interfaces/IUsuario';
+
 /**
  * Generated class for the CadastroPage page.
  *
@@ -17,6 +19,8 @@ import { HomePage } from '../home/home';
 })
 export class CadastroPage {
 
+  usuario:IUsuario = {name:'',email:'',password:''};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,6 +30,10 @@ export class CadastroPage {
 
   cancelar(){ //método para cancelar, voltar para página home
     this.navCtrl.setRoot(HomePage);
+  }
+
+  addUsuario(){
+    console.log(this.usuario);
   }
 
 }
