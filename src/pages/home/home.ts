@@ -17,7 +17,16 @@ export class HomePage {
   lista: ICurso[];
 
   constructor(public navCtrl: NavController, public cursoProvider: CursosProvider) {
-    this.lista = this.cursoProvider.all();
+    //this.lista = this.cursoProvider.all();
+    
+  }
+
+  ionViewDidEnter(){ //executa sempre que a pessoa entrar, ou seja, faz a requisição pro servidor e vai atualizar a lista caso tenha alguma alteração
+    this.cursoProvider.allTeste().subscribe(res => {
+      this.lista = res;
+    }, erro => {
+      console.log("Erro: " + erro.message);
+    });
   }
 
   abreDetalhe(item) {
