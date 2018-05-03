@@ -27,18 +27,20 @@ export class PerfilPage {
   }
 
   ionViewDidLoad() {
-    let usuario = {
-      "name": "lucas",
-      "email": "lucas@g",
-      "password": "1234",
-      "id": 1
-    };
+  
+    this.usuariosProvider.getStorage("usuario").then(usuario => {
+      if(usuario){
+        this.usuario = usuario; //primeiramente pega os dados locais
+        this.usuariosProvider.showUsuario(usuario).subscribe(res => {
+          this.usuario = res; //verifica os dados no servidor e atualiza as informações
+        }, erro => {
+          console.log("Erro: " + erro.message); 
+        });
+      }else{
+        this.cancelar(); //se entrar no else é pq não tem o usuário salvo/persistido, nesse caso ele executa o cancelar para voltar na tela inicial, pois não quero que entre no perfil
+      }
+    });//otimizando a página de perfil pra ver se o usuário está logado
 
-    this.usuariosProvider.showUsuario(usuario).subscribe(res => {
-      this.usuario = res;
-    }, erro => {
-      console.log("Erro: " + erro.message);
-    });
 
   }
 
