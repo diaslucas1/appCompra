@@ -20,6 +20,22 @@ export class CursosProvider {
     return this.http.get<ICurso[]>('http://localhost:3000/cursos');
   }
 
+  showTeste(data:ICurso){
+    return this.http.get<ICurso>('http://localhost:3000/cursos/'+data.id);
+  }
+
+  addTeste(data:ICurso){
+    return this.http.post<ICurso>('http://localhost:3000/cursos',data);
+  }
+
+  editTeste(data:ICurso){
+    return this.http.put<ICurso>('http://localhost:3000/cursos/'+data.id,data);//concatena o id do registro e as informações que quer alterar no registro(data)
+  }
+
+  deleteTeste(data:ICurso){
+    return this.http.delete<ICurso>('http://localhost:3000/cursos/'+data.id);
+  }
+
   all(){
     const lista: ICurso[] = [
       {
