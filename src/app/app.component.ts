@@ -38,6 +38,16 @@ export class MyApp {
       { title: 'Perfil', component: PerfilPage },
     ];
 
+    this.usuariosProvider.getStorage("usuario").then(usuario =>{
+      if(usuario){
+        this.menuCtrl.enable(true, 'usuarioComLogin');
+        this.menuCtrl.enable(false, 'usuarioSemLogin');
+      }else{
+        this.menuCtrl.enable(false, 'usuarioComLogin');
+        this.menuCtrl.enable(true, 'usuarioSemLogin');
+      }
+    });//verificando se o usuário está logado ou não
+
   }
 
   initializeApp() {
