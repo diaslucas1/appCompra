@@ -17,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CursosProvider } from '../providers/cursos/cursos';
 import { UsuariosProvider } from '../providers/usuarios/usuarios';
-;
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UsuariosProvider } from '../providers/usuarios/usuarios';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

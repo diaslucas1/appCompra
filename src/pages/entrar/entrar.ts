@@ -36,6 +36,7 @@ export class EntrarPage {
 
   loginUsuario(){
     this.usuariosProvider.loginUsuario(this.usuario).subscribe(res => {
+      this.usuariosProvider.setStorage("usuario",res);
       console.log(res);
     }, erro => {
       console.log("Erro: " + erro.message);
