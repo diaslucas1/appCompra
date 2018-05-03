@@ -6,7 +6,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetalhePage } from '../pages/detalhe/detalhe';
 import { AulaPage } from '../pages/aula/aula';
-import { CadastroPage } from '../pages/cadastro/cadastro'
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { EntrarPage } from '../pages/entrar/entrar';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,7 +25,9 @@ import { UsuariosProvider } from '../providers/usuarios/usuarios';
     HomePage,
     DetalhePage,
     AulaPage,
-    CadastroPage
+    CadastroPage,
+    PerfilPage,
+    EntrarPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { UsuariosProvider } from '../providers/usuarios/usuarios';
     HomePage,
     DetalhePage,
     AulaPage,
-    CadastroPage
+    CadastroPage,
+    PerfilPage,
+    EntrarPage
   ],
   providers: [
     StatusBar,

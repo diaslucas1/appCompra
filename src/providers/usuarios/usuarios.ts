@@ -19,8 +19,20 @@ export class UsuariosProvider {
     //this.headers = {"headers": {"authorization": "Bearer "}};
   }
 
+  showUsuario(data:IUsuario){
+    return this.http.get<IUsuario>(this.url +'usuarios/'+data.id);
+  }
+
+  loginUsuario(data:IUsuario){
+    return this.http.get<IUsuario>(this.url +'usuarios/1');
+  }
+
   addUsuario(data:IUsuario){
     return this.http.post<IUsuario>(this.url +'usuarios',data);
+  }
+
+  editUsuario(data:IUsuario){
+    return this.http.put<IUsuario>(this.url +'usuarios/'+data.id,data);
   }
 
   

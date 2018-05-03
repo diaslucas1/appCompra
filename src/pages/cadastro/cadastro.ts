@@ -27,7 +27,7 @@ export class CadastroPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPage');
+    
   }
 
   cancelar(){ //método para cancelar, voltar para página home
@@ -40,7 +40,6 @@ export class CadastroPage {
     }, erro => {
       console.log("Erro: " + erro.message);
     });
-
   }
 
 }
